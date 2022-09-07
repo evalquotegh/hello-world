@@ -1,0 +1,9 @@
+header {
+    display: flex;
+    gap: 16px;
+}
+
+img {
+    width: 64px;
+    height: 64px;
+}
