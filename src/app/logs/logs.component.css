@@ -1,0 +1,15 @@
+.is-first::before {
+    content: '(first) '
+}
+
+.is-last::before {
+    content: '(last) '
+}
+
+.is-odd::after {
+    content: ' (odd)'
+}
+
+.is-even::after {
+    content: ' (even)'
+}

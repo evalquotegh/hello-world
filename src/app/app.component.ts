@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hello-world';
+  title: string = 'hello-world';
+  titles: string[] = [];
 
   updateProjectName(newTitle: string) {
     this.title = newTitle;
+    this.titles.push(newTitle);
   }
 }

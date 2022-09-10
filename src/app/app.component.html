@@ -1,5 +1,5 @@
 <app-header [projectName]="title" 
             projectUrl="/" 
             imageUrl="/assets/logo.png"></app-header>
-
 <app-settings (projectNameEmitter)="updateProjectName($event)"></app-settings>
+<app-logs [logs]="titles"></app-logs>

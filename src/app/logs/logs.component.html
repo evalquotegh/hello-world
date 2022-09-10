@@ -1,0 +1,8 @@
+<h1>Project Names</h1>
+<ul>
+    <li *ngFor="let log of logs; index as i; first as isFirst; last as isLast; odd as isOdd; even as isEven"
+        [class.is-first]="isFirst"
+        [class.is-last]="isLast"
+        [class.is-odd]="isOdd"
+        [class.is-even]="isEven">{{ i }}. {{ log }}</li>
+</ul>
