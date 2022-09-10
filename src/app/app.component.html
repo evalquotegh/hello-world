@@ -1,6 +1,5 @@
-<app-header projectName="hello-world" 
+<app-header [projectName]="title" 
             projectUrl="/" 
             imageUrl="/assets/logo.png"></app-header>
 
-<p>{{ title }}</p>
-<input type="text" (keyup)="onKeyUp(inputTitle.value)" [value]="title" #inputTitle />
+<app-settings (projectNameEmitter)="updateProjectName($event)"></app-settings>
