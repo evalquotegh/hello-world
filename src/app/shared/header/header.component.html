@@ -1,8 +1,8 @@
 <header>
-    <a href="/">
-        <img src="/assets/logo.png" alt="" />
+    <a [href]="projectUrl">
+        <img [src]="imageUrl" [alt]="projectName" />
     </a>
     <h1>
-        <a href="/">hello-world</a>
+        <a [href]="projectUrl">{{ projectName }}</a>
     </h1>
 </header>
