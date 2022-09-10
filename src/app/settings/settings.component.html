@@ -1,2 +1,2 @@
 <label for="project-name">Project Name </label>
-<input type="text" #projectName (keyup)="updateProjectName(projectName.value)" />
+<input type="text" #projectName (keyup.enter)="updateProjectName(projectName.value)" />
