@@ -1,1 +1,6 @@
-<p>users works!</p>
+<div *ngIf="users.length">
+    <h2>Users</h2>
+    <ul>
+        <li *ngFor="let user of users | slice:0:5">{{ user.name }}</li>
+    </ul>
+</div>
