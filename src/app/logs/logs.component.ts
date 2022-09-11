@@ -33,7 +33,7 @@ export class LogsComponent implements OnInit {
     }
 
     return klass;
-  
+
   }
 
   getStyles(url: string): KLASS {
@@ -41,6 +41,10 @@ export class LogsComponent implements OnInit {
       background: `url(${url}) no-repeat`,
       paddingLeft: 'calc(16px + 8px)'
     }
+  }
+
+  getDate(): Date {
+    return new Date();
   }
 }
 
