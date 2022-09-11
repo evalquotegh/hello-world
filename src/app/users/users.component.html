@@ -2,6 +2,10 @@
     <!-- fixme: users.length condition is now missing -->
     <h2>Users</h2>
     <ul>
-        <li *ngFor="let user of users | slice:0:5">{{ user.name }}</li>
+        <li *ngFor="let user of users | slice:0:5">
+            #{{ user.id }}
+            {{ user.name }}
+            ({{ user.email }})
+        </li>
     </ul>
 </div>

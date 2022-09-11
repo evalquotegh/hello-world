@@ -1,9 +1,9 @@
 {
-    "posts": [
+    "users": [
         {
             "id": 1,
-            "title": "json-server",
-            "author": "typicode"
+            "name": "Foo Bar Baz",
+            "email": "foo@bar.baz"
         }
     ]
 }

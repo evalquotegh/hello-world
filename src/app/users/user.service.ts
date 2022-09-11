@@ -11,10 +11,10 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   getUsers(): Observable<User[]> {
-    const url = 'https://jsonplaceholder.typicode.com/users';
+    const url = 'http://localhost:3000/users';
     const params = new HttpParams()
-      .set('name_like', 'ne')
-      .set('email_like', 'biz')
+      .set('name_like', 'foo')
+      .set('email_like', 'baz')
       
       return this.httpClient.get<User[]>(url, { params });
   }
