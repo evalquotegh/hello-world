@@ -1,27 +1,29 @@
-<h1>Project Names</h1>
-<ul>
-    <li *ngFor="let log of logs | slice:0:10; index as i; first as isFirst; last as isLast; odd as isOdd; even as isEven"
-        [class.is-first]="isFirst"
-        [class.is-last]="isLast"
-        [class.is-odd]="isOdd"
-        [class.is-even]="isEven"
-        [ngClass]="getClasses(log)"
-        [ngStyle]="getStyles('https://picsum.photos/16/16')">
-        <p>
-            <time>{{ getDate() | date:'MM/dd/yyyy @ HH:mm:ss' }}</time>
-            <span [ngSwitch]="true">
-                [
-                <span *ngSwitchCase="isFirst"> First </span>
-                <span *ngSwitchCase="isOdd"> Odd </span>
-                <span *ngSwitchCase="isEven"> Even </span>
-                <span *ngSwitchCase="isLast"> Last </span>
-                <span *ngSwitchDefault>Any</span>
-                ]
-            </span>
-            <span *ngIf="log; else noLog">{{ i }}. {{ log }}</span>
-            <ng-template #noLog>
-                <span>{{ i }}. Log is empty.</span>
-            </ng-template>
-        </p>
-    </li>
-</ul>
+<div *ngIf="logs.length">
+    <h2>Project Names</h2>
+    <ul>
+        <li *ngFor="let log of logs | slice:0:10; index as i; first as isFirst; last as isLast; odd as isOdd; even as isEven"
+            [class.is-first]="isFirst"
+            [class.is-last]="isLast"
+            [class.is-odd]="isOdd"
+            [class.is-even]="isEven"
+            [ngClass]="getClasses(log)"
+            [ngStyle]="getStyles('https://picsum.photos/16/16')">
+            <p>
+                <time>{{ getDate() | date:'MM/dd/yyyy @ HH:mm:ss' }}</time>
+                <span [ngSwitch]="true">
+                    [
+                    <span *ngSwitchCase="isFirst"> First </span>
+                    <span *ngSwitchCase="isOdd"> Odd </span>
+                    <span *ngSwitchCase="isEven"> Even </span>
+                    <span *ngSwitchCase="isLast"> Last </span>
+                    <span *ngSwitchDefault>Any</span>
+                    ]
+                </span>
+                <span *ngIf="log; else noLog">{{ i }}. {{ log }}</span>
+                <ng-template #noLog>
+                    <span>{{ i }}. Log is empty.</span>
+                </ng-template>
+            </p>
+        </li>
+    </ul>
+</div>
