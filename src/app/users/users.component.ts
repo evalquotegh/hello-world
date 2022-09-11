@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 type User = {
   id: number;
@@ -31,7 +32,7 @@ type User = {
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  users: User[] = [];
+  users$: Observable<User[]> = of([]);
 
   constructor(private http: HttpClient) { }
 
@@ -40,8 +41,7 @@ export class UsersComponent implements OnInit {
       .set('name_like', 'ne')
       .set('email_like', 'biz')
 
-    this.http.get<User[]>('https://jsonplaceholder.typicode.com/users', { params })
-      .subscribe(users => (this.users = users));
+    this.users$ = this.http.get<User[]>('https://jsonplaceholder.typicode.com/users', { params });
   }
 
 }
