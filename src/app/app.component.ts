@@ -11,6 +11,6 @@ export class AppComponent {
 
   updateProjectName(newTitle: string) {
     this.title = newTitle;
-    this.titles.push(newTitle);
+    this.titles.unshift(newTitle);
   }
 }
