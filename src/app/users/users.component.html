@@ -3,9 +3,19 @@
     <h2>Users</h2>
     <ul>
         <li *ngFor="let user of users | slice:0:5">
-            #{{ user.id }}
-            {{ user.name }}
-            ({{ user.email }})
+            <p>#{{ user.id }} {{ user.name }} ({{ user.email }})</p>
+            <ul>
+                <li>ID #{{ user.id }}</li>
+                <li>
+                    <label for="name">Name </label>
+                    <input type="text" [value]="user.name" #userName />
+                </li>
+                <li>
+                    <label for="email">E-mail </label>
+                    <input type="text" [value]="user.email" #userEmail />
+                </li>
+            </ul>
+            <button (click)="updateUser(user.id, userName.value, userEmail.value)">Update</button>
         </li>
     </ul>
 </div>

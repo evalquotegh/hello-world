@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { User } from './user.model';
 import { UserService } from './user.service';
@@ -17,4 +17,8 @@ export class UsersComponent implements OnInit {
     this.users$ = this.userService.getUsers();
   }
 
+  updateUser(id: number, name: string, email: string): void {
+    const user = { id, name, email };
+    this.userService.updateUser(user).subscribe();
+  }
 }
