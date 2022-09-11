@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 type KLASS = {
-  [key: string]: boolean
+  [key: string]: any
 }
 
 @Component({
@@ -34,6 +34,13 @@ export class LogsComponent implements OnInit {
 
     return klass;
   
+  }
+
+  getStyles(url: string): KLASS {
+    return {
+      background: `url(${url}) no-repeat`,
+      paddingLeft: 'calc(16px + 8px)'
+    }
   }
 }
 
