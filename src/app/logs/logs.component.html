@@ -4,5 +4,8 @@
         [class.is-first]="isFirst"
         [class.is-last]="isLast"
         [class.is-odd]="isOdd"
-        [class.is-even]="isEven">{{ i }}. {{ log }}</li>
+        [class.is-even]="isEven">
+        <p *ngIf="log; else noLog">{{ i }}. {{ log }}</p>
+        <ng-template #noLog>{{i }}. Log is empty.</ng-template>
+    </li>
 </ul>
