@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LogsComponent } from './logs/logs.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SettingsComponent,
-    LogsComponent
+    LogsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule
