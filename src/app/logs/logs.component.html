@@ -5,7 +5,8 @@
         [class.is-last]="isLast"
         [class.is-odd]="isOdd"
         [class.is-even]="isEven"
-        [ngClass]="getClasses(log)">
+        [ngClass]="getClasses(log)"
+        [ngStyle]="getStyles('https://picsum.photos/16/16')">
         <p *ngIf="log; else noLog">{{ i + 1 }}. {{ log }}</p>
         <ng-template #noLog>
             <p>{{ i + 1 }}. Log is empty.</p>
