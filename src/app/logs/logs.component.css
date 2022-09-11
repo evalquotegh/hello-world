@@ -1,15 +1,27 @@
-.is-first::before {
+.is-first p::before {
     content: '(first) '
 }
 
-.is-last::before {
+.is-last p::before {
     content: '(last) '
 }
 
-.is-odd::after {
+.is-odd p::after {
     content: ' (odd)'
 }
 
-.is-even::after {
+.is-even p::after {
     content: ' (even)'
+}
+
+.is-empty {
+    color: red;
+}
+
+.is-short {
+    color: orange;
+}
+
+.is-long {
+    color: green;
 }
