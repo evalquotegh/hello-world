@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 type User = {
   id: number;
@@ -36,7 +36,11 @@ export class UsersComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<User[]>('https://jsonplaceholder.typicode.com/users')
+    const params = new HttpParams()
+      .set('name_like', 'ne')
+      .set('email_like', 'biz')
+
+    this.http.get<User[]>('https://jsonplaceholder.typicode.com/users', { params })
       .subscribe(users => (this.users = users));
   }
 
